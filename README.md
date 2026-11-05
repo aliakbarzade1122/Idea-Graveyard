@@ -4,14 +4,14 @@
 A dark, atmospheric community cemetery for unfinished, abandoned, and occasionally resurrected ideas.
 
 ## Project
-Idea Graveyard gives every unfinished idea a place to rest and a story worth remembering. A grave can include a title, story, reason for abandonment, visibility, and a visual theme. Ideas can receive flowers and tributes, and their owners can bring them back to life.
+Give unfinished ideas a place to rest and a story worth remembering. A grave can include a title, story, reason for abandonment, visibility, and a visual theme. Ideas can receive flowers and tributes, and their owners can bring them back to life.
 
 ## Planned experience
 - Explore public graves and search by title
 - Create public or private graves
 - Keep a history of burial and resurrection
 - Leave flowers and written tributes
-- View community Hall of Fame
+- View a community Hall of Fame
 - Add anniversaries, a virtual shop, and a wallet in later milestones
 
 ## Technology
@@ -23,22 +23,22 @@ Idea Graveyard gives every unfinished idea a place to rest and a story worth rem
 
 ## Repository layout
 ```
-index.html                 GitHub Pages entry point
-frontend/                  Main frontend source
-functions/graveyard-api/   API Function source
-functions/graveyard-scheduler/ Scheduled Function source
-docs/                      Project notes
+index.html
+functions/graveyard-api/
+functions/graveyard-scheduler/
+docs/STATUS.md
 ```
 
-## Appwrite project
-- Project ID: `idea-graveyard`
-- Database ID: `graveyard-db`
+## Appwrite resources
+- Project: `idea-graveyard`
+- Database: `graveyard-db`
 - Storage bucket: `grave-images`
+- Functions: `graveyard-api`, `graveyard-scheduler`
 
-The Appwrite project is being configured. Function source and deployments, database schema compatibility, authentication flows, and GitHub Pages hosting must be verified before the site is considered live. No API keys or secrets belong in this repository.
+Both Functions have active deployments. The public Explore endpoint passed a read-only smoke test (HTTP 200). The API Function has only `rows.read` and `rows.write` scopes; the scheduler has only `rows.read`. The API uses Appwrite's per-execution key header server-side and accepts the user's session JWT for authenticated actions.
 
 ## Safety and scope
-The initial version uses virtual flowers only. There are no real-money payments, cryptocurrency, deposits, or withdrawals. Private graves must remain private. Site-wide events are symbolic and must never delete or disable the real website or its data.
+The initial version uses virtual flowers only. There are no real-money payments, cryptocurrency, deposits, or withdrawals. Private graves must remain private. Site-wide events are symbolic and must never delete or disable the real website or its data. Never commit API keys or secrets.
 
 ## Development status
-This is an early MVP. Before public launch, test all authenticated actions, review Appwrite row permissions, add abuse protection and rate limits, and finish password recovery, image uploads, moderation, and anniversary features.
+This is an early MVP, not a finished public service. Before launch, test authenticated sign-up/login and all write actions, review private-row access with separate accounts, and add abuse protection and rate limits. Password recovery, image upload, moderation, and anniversary features remain future work.
