@@ -1,0 +1,7 @@
+{
+  "name": "idea-graveyard-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": { "node-appwrite": "^21.0.0" }
+}
