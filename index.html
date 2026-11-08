@@ -1,17 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#11100f"><meta name="description" content="A cemetery for unfinished ideas. Give forgotten projects a resting place — or a second chance.">
-<title>Idea Graveyard — Ideas may die. Their stories never do.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{color-scheme:dark;--bg:#11100f;--panel:#1c1a16;--gold:#c6a66b;--muted:#aaa194}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#eee9df;font:15px "DM Sans",sans-serif;line-height:1.65}header,footer{padding:22px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #343027}.logo{color:#eee;text-decoration:none;letter-spacing:2px;font-size:12px}.logo b{color:var(--gold)}nav{display:flex;gap:20px}nav a,footer a{color:#cfc5b5;text-decoration:none;font-size:12px}.hero{min-height:75vh;padding:9vh 9%;display:grid;grid-template-columns:1.1fr .9fr;gap:7%;align-items:center}.eyebrow{color:var(--gold);letter-spacing:2px;font-size:10px;font-weight:bold}.hero h1{font:500 clamp(54px,7vw,88px)/.95 "Cormorant Garamond",Georgia,serif;margin:24px 0}.hero h1 i,h2 i{color:var(--gold);font-weight:400}.lead{font:500 22px/1.4 "Cormorant Garamond",serif;color:#e2d7c5;max-width:480px}.hero p{color:var(--muted);max-width:480px}.button{display:inline-block;margin-top:22px;padding:13px 20px;background:var(--gold);color:#19150e;text-decoration:none;font-size:12px;font-weight:bold}.art{height:390px;position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 30%,#414032,#1d211b 65%,#10120f);border:1px solid #37382c;overflow:hidden}.moon{position:absolute;right:17%;top:12%;width:75px;height:75px;border-radius:50%;background:#d8c9a3;box-shadow:0 0 45px #c6a66b66}.stone{position:absolute;bottom:16%;width:112px;height:140px;border-radius:55px 55px 4px 4px;background:linear-gradient(110deg,#777664,#45483b);border:2px solid #99927a;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#e0d4b5;font:25px Georgia;box-shadow:0 10px 20px #0008}.stone small{font:8px "DM Sans";letter-spacing:1px;margin-top:6px}.stone.main{width:140px;height:175px;z-index:2}.stone.left{left:9%;transform:scale(.75);opacity:.7}.stone.right{right:7%;transform:scale(.65);opacity:.6}.artfoot{position:absolute;bottom:4%;color:#81816e;font-size:8px;letter-spacing:3px}.manifesto{padding:48px 9%;background:#171613;border-block:1px solid #373127;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.manifesto h2{font:500 32px "Cormorant Garamond";margin:0;color:var(--gold)}.manifesto p{font-size:12px;color:var(--muted)}.closing{text-align:center;padding:80px 20px}.closing h2{font:500 48px "Cormorant Garamond";margin:8px}.closing p{color:var(--muted)}footer{border-top:1px solid #343027;border-bottom:0;color:#837b70;font-size:11px}@media(max-width:760px){header{padding:18px 5%}nav{gap:10px}.hero{grid-template-columns:1fr;padding:65px 7%;gap:35px}.art{height:310px}.manifesto{grid-template-columns:1fr;padding:40px 8%}footer{gap:15px;flex-wrap:wrap}}
-</style></head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="A thoughtful home for unfinished ideas. Bury a project, remember its story, and bring it back when the time is right.">
+  <title>Idea Graveyard — Ideas may die. Their stories never do.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/appwrite@29.0.0"></script>
+  <script src="./assets/app.js" defer></script>
+</head>
 <body>
-<header><a class="logo" href="#">✦ IDEA <b>GRAVEYARD</b></a><nav><a href="#about">About</a><a href="#grounds">The Grounds</a><a href="https://github.com/aliakbarzadegog2-ui/Idea-Graveyard">Source code ↗</a></nav></header>
-<main><section class="hero"><div><span class="eyebrow">✦ A CEMETERY FOR THE ALMOST-GREAT</span><h1>Some ideas<br>deserve a <i>resting place.</i></h1><p class="lead">The app you never finished. The business that never launched. The brilliant plan you forgot on Tuesday.</p><p>Give your unfinished ideas a proper goodbye. Or maybe… a second chance.</p><a class="button" href="https://github.com/aliakbarzadegog2-ui/Idea-Graveyard">Explore the project ↗</a></div><div class="art" aria-label="Illustration of three symbolic gravestones"><div class="moon"></div><div class="stone left">404<small>THE BIG PLAN</small></div><div class="stone main">✦<b>R.I.P.</b><small>THE NEXT BIG THING</small><small>2024 — 2025</small></div><div class="stone right">...<small>COMING SOON™</small></div><div class="artfoot">EST. WHENEVER YOU GAVE UP</div></div></section>
-<section class="manifesto" id="about"><div><h2>Remember</h2><p>Every unfinished idea has a story. Keep the story, even if the project did not make it.</p></div><div id="grounds"><h2>Rest</h2><p>Give abandoned plans a proper resting place, with a title, a reason, and a little dignity.</p></div><div><h2>Return</h2><p>Some ideas are not gone forever. A comeback is always part of the story.</p></div></section>
-<section class="closing"><span class="eyebrow">THE GROUNDS ARE BEING PREPARED</span><h2>Not every end is an <i>end.</i></h2><p>Ideas may die. Their stories never do.</p></section></main>
-<footer><a class="logo" href="#">✦ IDEA <b>GRAVEYARD</b></a><span>Ideas may die. Their stories never do.</span><span>© 2026</span></footer>
-</body></html>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Idea Graveyard home">
+      <span class="brand__mark" aria-hidden="true">✦</span>
+      <span>IDEA <strong>GRAVEYARD</strong></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#explore">Explore</a>
+      <a href="#hall">Hall of Fame</a>
+      <button class="nav-link" id="myGravesNav" type="button">My graves</button>
+    </nav>
+    <div class="header-actions">
+      <button class="button button--quiet button--small" id="authOpen" type="button">Sign in</button>
+      <button class="button button--gold button--small" id="createOpen" type="button">＋ Plant an idea</button>
+      <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero page-wrap">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="eyebrow__line"></span> A CEMETERY FOR THE ALMOST-GREAT</p>
+        <h1>Some ideas deserve<br>a <em>resting place.</em></h1>
+        <p class="hero__lead">The app you never finished. The business that never launched. The brilliant plan you forgot on Tuesday.</p>
+        <p class="hero__text">Give unfinished ideas a proper goodbye. Keep their stories. And when the time is right, give them another chance.</p>
+        <div class="hero__actions">
+          <a class="button button--gold" href="#explore">Explore the grounds <span aria-hidden="true">↗</span></a>
+          <button class="button button--outline" id="heroCreate" type="button">Bury an idea <span aria-hidden="true">＋</span></button>
+        </div>
+        <div class="hero__note"><span class="status-dot"></span><span>A quiet place for unfinished things.</span></div>
+      </div>
+      <div class="cemetery-art" role="img" aria-label="A moonlit cemetery with three symbolic gravestones">
+        <div class="cemetery-art__moon"></div>
+        <div class="cemetery-art__stars" aria-hidden="true">✦　·　✧　　　　·　✦<br>　　·　　　　✧　　·</div>
+        <div class="cemetery-art__fog cemetery-art__fog--one"></div>
+        <div class="cemetery-art__fog cemetery-art__fog--two"></div>
+        <div class="art-stone art-stone--left"><span>404</span><small>THE BIG PLAN</small></div>
+        <div class="art-stone art-stone--main"><span>✦</span><b>R.I.P.</b><small>THE NEXT BIG THING</small><small>2024 — 2025</small></div>
+        <div class="art-stone art-stone--right"><span>...</span><small>COMING SOON™</small></div>
+        <div class="cemetery-art__ground"></div>
+        <div class="cemetery-art__caption">EST. WHENEVER YOU GAVE UP</div>
+      </div>
+    </section>
+
+    <section class="principles page-wrap" aria-label="Our principles">
+      <article><span class="principles__number">01</span><div><h2>Remember</h2><p>Every unfinished idea has a story. Keep the story, even if the project did not make it.</p></div></article>
+      <article><span class="principles__number">02</span><div><h2>Rest</h2><p>Give abandoned plans a proper resting place, with a title, a reason, and a little dignity.</p></div></article>
+      <article><span class="principles__number">03</span><div><h2>Return</h2><p>Some ideas are not gone forever. A comeback is always part of the story.</p></div></article>
+    </section>
+
+    <section class="stats-band" aria-label="Community statistics">
+      <div class="page-wrap stats-grid">
+        <div><span class="stat-value" id="statGraves">—</span><span class="stat-label">Ideas laid to rest</span></div>
+        <div><span class="stat-value" id="statFlowers">—</span><span class="stat-label">Flowers left behind</span></div>
+        <div><span class="stat-value" id="statReturns">—</span><span class="stat-label">Ideas brought back</span></div>
+      </div>
+    </section>
+
+    <section class="section page-wrap" id="explore">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__line"></span> THE GROUNDS</p>
+          <h2>Explore the <em>graves.</em></h2>
+          <p class="section-subtitle">Every stone holds a story. Wander respectfully.</p>
+        </div>
+        <button class="button button--outline" id="exploreCreate" type="button">＋ Add your idea</button>
+      </div>
+      <div class="explore-tools">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="graveSearch" type="search" placeholder="Search ideas by title..." autocomplete="off">
+        </label>
+        <label class="filter-label" for="graveFilter">Show</label>
+        <select id="graveFilter" class="select-control">
+          <option value="all">All graves</option>
+          <option value="buried">Resting</option>
+          <option value="resurrected">Resurrected</option>
+        </select>
+      </div>
+      <div id="exploreStatus" class="inline-status" role="status">Opening the gates...</div>
+      <div class="grave-grid" id="graveGrid" aria-live="polite"></div>
+      <div class="empty-state" id="exploreEmpty" hidden>
+        <span class="empty-state__icon" aria-hidden="true">✧</span>
+        <h3>The grounds are quiet.</h3>
+        <p>No matching graves yet. Perhaps you have an idea that belongs here.</p>
+        <button class="button button--gold" type="button" data-open-create>Bury the first idea</button>
+      </div>
+      <div class="section-more"><span>Stories are kept here, not forgotten.</span><button class="text-button" id="refreshExplore" type="button">Refresh grounds ↻</button></div>
+    </section>
+
+    <section class="hall-section" id="hall">
+      <div class="page-wrap">
+        <div class="section-heading section-heading--center">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> SECOND CHANCES</p>
+            <h2>Hall of <em>Fame.</em></h2>
+            <p class="section-subtitle">Some ideas refuse to stay buried.</p>
+          </div>
+        </div>
+        <div class="hall-grid" id="hallGrid">
+          <div class="hall-placeholder">The hall is being prepared...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-graves page-wrap" id="myGraves" hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow__line"></span> YOUR CORNER</p><h2>Your <em>graves.</em></h2><p class="section-subtitle">The ideas you have entrusted to this place.</p></div>
+        <button class="button button--gold" type="button" data-open-create>＋ New grave</button>
+      </div>
+      <div class="grave-grid" id="myGravesGrid"></div>
+      <div class="empty-state" id="myGravesEmpty" hidden><span class="empty-state__icon">✦</span><h3>Your corner is empty.</h3><p>Give your first unfinished idea a place to rest.</p><button class="button button--gold" type="button" data-open-create>Bury an idea</button></div>
+    </section>
+
+    <section class="closing page-wrap">
+      <p class="eyebrow"><span class="eyebrow__line"></span> A PLACE TO BEGIN AGAIN</p>
+      <h2>Not every end is an <em>end.</em></h2>
+      <p>Ideas may die. Their stories never do.</p>
+      <button class="button button--gold" type="button" data-open-create>Leave a story behind <span aria-hidden="true">↗</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true">✦</span><span>IDEA <strong>GRAVEYARD</strong></span></a>
+    <p>Ideas may die. Their stories never do.</p>
+    <span>© 2026 Idea Graveyard</span>
+  </footer>
+
+  <dialog class="modal" id="authDialog" aria-labelledby="authTitle">
+    <form class="modal__shell" id="authForm">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Close">×</button>
+      <p class="eyebrow"><span class="eyebrow__line"></span> YOUR PLACE IN THE GROUNDS</p>
+      <h2 id="authTitle">Welcome <em>back.</em></h2>
+      <p class="modal__intro" id="authIntro">Sign in to tend to your ideas and leave a little kindness behind.</p>
+      <div class="auth-tabs" role="tablist" aria-label="Account access">
+        <button class="auth-tab is-active" type="button" data-auth-mode="login" role="tab" aria-selected="true">Sign in</button>
+        <button class="auth-tab" type="button" data-auth-mode="register" role="tab" aria-selected="false">Create account</button>
+      </div>
+      <label class="form-field" id="authNameField" hidden><span>Your name</span><input name="name" type="text" maxlength="80" autocomplete="name" placeholder="How should we call you?"></label>
+      <label class="form-field"><span>Email address</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="form-field"><span>Password</span><input name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label>
+      <p class="form-error" id="authError" role="alert" hidden></p>
+      <button class="button button--gold button--full" id="authSubmit" type="submit">Sign in</button>
+      <p class="fine-print">Your private graves stay private. Please be kind to the stories you find here.</p>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="createDialog" aria-labelledby="createTitle">
+    <form class="modal__shell" id="createForm">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Close">×</button>
+      <p class="eyebrow"><span class="eyebrow__line"></span> GIVE IT A RESTING PLACE</p>
+      <h2 id="createTitle">Lay an idea <em>to rest.</em></h2>
+      <p class="modal__intro">Every idea deserves a name and an honest story. You can choose who gets to see it.</p>
+      <label class="form-field"><span>Idea title</span><input name="title" type="text" maxlength="120" minlength="2" required placeholder="The project that almost was..."></label>
+      <label class="form-field"><span>Its story</span><textarea name="description" rows="3" maxlength="2500" placeholder="What was this idea supposed to become?"></textarea></label>
+      <label class="form-field"><span>Why did it stop?</span><textarea name="death_reason" rows="2" maxlength="1500" placeholder="Time, scope, a new direction, or something else..."></textarea></label>
+      <div class="form-row">
+        <label class="form-field"><span>Visibility</span><select class="select-control" name="visibility"><option value="public">Public — everyone can visit</option><option value="private">Private — only you can see it</option></select></label>
+        <label class="form-field"><span>Stone theme</span><select class="select-control" name="theme_id"><option value="classic">Classic stone</option><option value="moonlit">Moonlit</option><option value="moss">Moss garden</option></select></label>
+      </div>
+      <p class="form-error" id="createError" role="alert" hidden></p>
+      <button class="button button--gold button--full" id="createSubmit" type="submit">Lay this idea to rest</button>
+      <p class="fine-print">Private means private. Public graves can receive flowers and tributes from signed-in visitors.</p>
+    </form>
+  </dialog>
+
+  <dialog class="modal modal--wide" id="graveDialog" aria-labelledby="graveTitle">
+    <div class="modal__shell grave-detail" id="graveDetail">
+      <button class="modal__close" type="button" data-close-dialog aria-label="Close">×</button>
+      <div class="grave-detail__loading">Opening this story...</div>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
