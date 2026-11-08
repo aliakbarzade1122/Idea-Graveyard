@@ -190,9 +190,12 @@
       const result = await api("explore", {
         limit: 60,
         status: state.status,
-        search: state.search
       });
-      const graves = Array.isArray(result.graves) ? result.graves : [];
+      const allGraves = Array.isArray(result.graves) ? result.graves : [];
+      const needle = state.search.toLocaleLowerCase();
+      const graves = needle
+        ? allGraves.filter((grave) => String(grave.title || "").toLocaleLowerCase().includes(needle))
+        : allGraves;
       renderGraves($("#graveGrid"), graves);
       updateStats(result.stats || {});
       $("#exploreEmpty").hidden = graves.length !== 0;
@@ -210,7 +213,8 @@
   async function loadHall() {
     try {
       const result = await api("hall");
-      const graves = Array.isArray(result.graves) ? result.graves : [];
+      const allGraves = Array.isArray(result.graves) ? result.graves : [];
+      const graves = allGraves.filter((grave) => Number(grave.resurrection_count) > 0);
       const grid = $("#hallGrid");
       if (!graves.length) {
         grid.innerHTML = '<div class="hall-placeholder">The Hall of Fame is waiting for its first comeback.</div>';
@@ -233,7 +237,7 @@
     }
   }
 
-  async function loadMyGraves() {
+  async function loadMyGraves(shouldScroll = true) {
     if (!state.user) {
       openAuth("login");
       notify("Sign in to see your graves.", "error");
@@ -241,7 +245,7 @@
     }
     const section = $("#myGraves");
     section.hidden = false;
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (shouldScroll) section.scrollIntoView({ behavior: "smooth", block: "start" });
     $("#myGravesGrid").innerHTML = '<div class="hall-placeholder">Finding your graves...</div>';
     $("#myGravesEmpty").hidden = true;
     try {
@@ -294,7 +298,7 @@
       ? ""
       : (state.user
         ? '<form class="tribute-form" id="tributeForm"><textarea name="message" rows="2" maxlength="500" minlength="2" required placeholder="Leave a kind word..."></textarea><button class="button button--outline" type="submit">Leave tribute</button></form>'
-        : '<p class="tribute-empty">Sign in to leave a tribute.</p>');
+        : '<button class="text-button" type="button" id="detailAuth">Sign in to leave a tribute.</button>');
     $("#graveDetail").innerHTML =
       '<button class="modal__close" type="button" data-close-dialog aria-label="Close">×</button>' +
       '<div class="grave-detail__header"><div class="grave-detail__stone" aria-hidden="true">✦</div>' +
@@ -344,6 +348,9 @@
         }
       });
     }
+
+    const detailAuth = $("#detailAuth");
+    if (detailAuth) detailAuth.addEventListener("click", () => openAuth("login"));
 
     const tributeFormElement = $("#tributeForm");
     if (tributeFormElement) {
@@ -449,7 +456,7 @@
       form.reset();
       notify("Your idea has found its resting place.");
       await loadExplore();
-      await loadMyGraves();
+      if (!$("#myGraves").hidden) await loadMyGraves(false);
     } catch (error) {
       errorBox.textContent = error.message || "The grave could not be created.";
       errorBox.hidden = false;
